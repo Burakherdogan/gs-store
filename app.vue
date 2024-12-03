@@ -1,19 +1,28 @@
 <template>
   <div>
     <Navbar />
-    <SupportButton /> 
+    <Slider />
+    <SupportButton />
+    <ShopByPlayer />
   </div>
 </template>
 
 <script>
 import Navbar from "~/components/Navbar.vue";
 import SupportButton from '~/components/SupportButton.vue';
+import Slider from "@/components/Slider.vue";
+import ShopByPlayer from '@/components/ShopByPlayer'
+
+
 
 
 export default {
   components: {
     Navbar,
     SupportButton,
+    Slider,
+    ShopByPlayer,
+
   },
   mounted() {
       window.addEventListener('focus', this.setActiveTitle);
