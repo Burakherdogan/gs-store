@@ -1,15 +1,19 @@
 <template>
   <div>
-    <Navbar /> 
+    <Navbar />
+    <SupportButton /> 
   </div>
 </template>
 
 <script>
 import Navbar from "~/components/Navbar.vue";
+import SupportButton from '~/components/SupportButton.vue';
+
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    SupportButton,
   },
 };
 </script>
