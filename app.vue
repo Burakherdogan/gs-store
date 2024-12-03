@@ -15,7 +15,23 @@ export default {
     Navbar,
     SupportButton,
   },
-};
+  mounted() {
+      window.addEventListener('focus', this.setActiveTitle);
+      window.addEventListener('blur', this.setInactiveTitle);
+    },
+    methods: {
+      setActiveTitle() {
+        document.title = 'GS Store';
+      },
+      setInactiveTitle() {
+        document.title = 'Göster Sevdanı!';
+      },
+    },
+    beforeUnmount() {
+      window.removeEventListener('focus', this.setActiveTitle);
+      window.removeEventListener('blur', this.setInactiveTitle);
+    },
+  };
 </script>
 
 <style scoped>
