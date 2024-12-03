@@ -53,21 +53,38 @@
             <i class="bi bi-search"></i>
           </button>
         </form>
-        <div class="icons ms-3">
+        <div class="icons ms-3" @mouseover="showCartPopup" @mouseleave="hideCartPopup">
           <i class="bi bi-person me-3"></i>
           <i class="bi bi-star me-3"></i>
-          <i class="bi bi-cart"></i>
+          <i class="bi bi-cart" @click="toggleCartPopup"></i>
         </div>
       </div>
     </div>
+
+    <!-- CartPopup Component -->
+    <CartPopup
+      :visible="cartPopupVisible"
+      :cartItems="cartItems"
+      @remove-item="removeItemFromCart"
+    />
   </nav>
 </template>
 
 <script>
+import CartPopup from './CartPopup.vue';
+
 export default {
+  components: {
+    CartPopup
+  },
   data() {
     return {
       isScrolled: false,
+      cartPopupVisible: false,
+      cartItems: [
+        { name: 'Product 1', price: 100, image: '/path-to-image1.jpg' },
+        { name: 'Product 2', price: 200, image: '/path-to-image2.jpg' }
+      ]
     };
   },
   mounted() {
@@ -78,9 +95,21 @@ export default {
   },
   methods: {
     handleScroll() {
-      this.isScrolled = window.scrollY > 50; 
+      this.isScrolled = window.scrollY > 50;
     },
-  },
+    toggleCartPopup() {
+      this.cartPopupVisible = !this.cartPopupVisible;
+    },
+    showCartPopup() {
+      this.cartPopupVisible = true;
+    },
+    hideCartPopup() {
+      this.cartPopupVisible = false;
+    },
+    removeItemFromCart(index) {
+      this.cartItems.splice(index, 1);
+    }
+  }
 };
 </script>
 
@@ -116,3 +145,4 @@ export default {
   color: #ff0000; 
 }
 </style>
+
