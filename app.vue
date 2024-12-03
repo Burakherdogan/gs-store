@@ -4,6 +4,7 @@
     <Slider />
     <SupportButton />
     <ShopByPlayer />
+    <ProductList />
     <Footer />
 
   </div>
@@ -15,6 +16,9 @@ import SupportButton from '~/components/SupportButton.vue';
 import Slider from "@/components/Slider.vue";
 import ShopByPlayer from '@/components/ShopByPlayer'
 import Footer from "./components/Footer.vue";
+import ProductList from './components/ProductList.vue';
+
+
 
 
 
@@ -26,6 +30,7 @@ export default {
     Slider,
     ShopByPlayer,
     Footer,
+    ProductList,
 
   },
   mounted() {
@@ -53,3 +58,4 @@ div {
   line-height: 1.5;
 }
 </style>
+
