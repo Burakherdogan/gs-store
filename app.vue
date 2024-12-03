@@ -4,6 +4,8 @@
     <Slider />
     <SupportButton />
     <ShopByPlayer />
+    <Footer />
+
   </div>
 </template>
 
@@ -12,6 +14,7 @@ import Navbar from "~/components/Navbar.vue";
 import SupportButton from '~/components/SupportButton.vue';
 import Slider from "@/components/Slider.vue";
 import ShopByPlayer from '@/components/ShopByPlayer'
+import Footer from "./components/Footer.vue";
 
 
 
@@ -22,6 +25,7 @@ export default {
     SupportButton,
     Slider,
     ShopByPlayer,
+    Footer,
 
   },
   mounted() {
