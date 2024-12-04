@@ -54,7 +54,6 @@
 
     <!-- Signup Form Placeholder -->
     <div v-else>
-      <p>Üye Ol formu burada olacak.</p>
     </div>
   </div>
 </template>

@@ -5,6 +5,9 @@
     <SupportButton />
     <ShopByPlayer />
     <ProductList />
+    <Discover />
+    <Review />
+    <Login />
     <Footer />
 
   </div>
@@ -17,6 +20,9 @@ import Slider from "@/components/Slider.vue";
 import ShopByPlayer from '@/components/ShopByPlayer'
 import Footer from "./components/Footer.vue";
 import ProductList from './components/ProductList.vue';
+import Discover from "./components/Discover.vue";
+import Review from "./components/Review.vue";
+import Login from "./components/Login.vue";
 
 
 

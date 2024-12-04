@@ -27,25 +27,25 @@ export default {
       cards: [
         {
           id: 1,
-          image: "1",
+          image: "1-t.webp",
           title: "AVRUPA LİGİ",
           description: "Koleksiyonu Keşfet",
         },
         {
           id: 2,
-          image: "2",
+          image: "2-t.webp",
           title: "ŞAMPİYON'24",
           description: "24. Şampiyonluk Ürünlerini İncele",
         },
         {
           id: 3,
-          image: "3",
+          image: "3-t.webp",
           title: "HEDİYE KARTI",
           description: "Gsstore.org'da geçerli hediye kartı",
         },
         {
           id: 4,
-          image: "4",
+          image: "4-t.webp",
           title: "PUMA",
           description: "Puma Koleksiyonu",
         },
