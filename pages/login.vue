@@ -97,7 +97,10 @@
     <script setup lang="ts">
     import { loginUser, registerUser } from "@/utils/authService";
     import { ref } from "vue";
-    
+    import { useRouter } from "vue-router";
+
+    const router = useRouter();
+
     const email = ref("");
     const password = ref("");
     const firstName = ref("");
@@ -115,6 +118,7 @@
       try {
         await loginUser(email.value, password.value);
         console.log("Giriş başarılı");
+          router.push("/"); // Anasayfaya yönlendirme
       } catch (error: any) {
         console.error("Hata:", error.message);
         alert("Giriş başarısız: " + error.message);
@@ -134,7 +138,6 @@
         alert("Kayıt başarısız: " + error.message);
       }
     };
-    
     const togglePasswordVisibility = () => {
       showPassword.value = !showPassword.value;
     };

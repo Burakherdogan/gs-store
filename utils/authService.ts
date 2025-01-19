@@ -1,6 +1,7 @@
 import { auth } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 
+
 // Kullanıcı giriş fonksiyonu
 export const loginUser = async (email: string, password: string): Promise<void> => {
   try {
@@ -15,6 +16,8 @@ export const loginUser = async (email: string, password: string): Promise<void> 
     throw new Error(error.message);
   }
 };
+
+
 
 // Kullanıcı kayıt fonksiyonu
 export const registerUser = async (email: string, password: string): Promise<void> => {
