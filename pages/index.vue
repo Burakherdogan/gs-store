@@ -1,4 +1,6 @@
 <template>
+    <Slider />
+    <ProductList />
     <div class="home">
       <section class="hero">
         <h1>GS Store</h1>
