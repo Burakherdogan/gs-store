@@ -57,7 +57,7 @@
               aria-expanded="false"
             ></i>
             <ul class="dropdown-menu" aria-labelledby="userMenu">
-              <li><a class="dropdown-item" href="#">Hesabım</a></li>
+              <li><a class="dropdown-item" href="/account">Hesabım</a></li>
               <li><a class="dropdown-item" href="#">Siparişlerim</a></li>
               <li>
                 <button class="dropdown-item" @click="logout">Çıkış Yap</button>

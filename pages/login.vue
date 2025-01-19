@@ -127,17 +127,31 @@
     
     const register = async () => {
       try {
+        // Şifrelerin eşleşip eşleşmediğini kontrol et
         if (registerPassword.value !== confirmPassword.value) {
           alert("Şifreler eşleşmiyor!");
           return;
         }
-        await registerUser(registerEmail.value, registerPassword.value);
+
+        // Kullanıcı verilerini birleştir
+        const userData = {
+          firstName: firstName.value,
+          lastName: lastName.value,
+          phone: phone.value,
+          birthDate: birthDate.value,
+        };
+
+        // registerUser fonksiyonuna gerekli verileri gönder
+        await registerUser(registerEmail.value, registerPassword.value, userData);
+
         console.log("Kayıt başarılı");
+        router.push("/login"); // Kayıt başarılıysa login sayfasına yönlendir
       } catch (error: any) {
         console.error("Hata:", error.message);
-        alert("Kayıt başarısız: " + error.message);
+        alert("Kayıt başarısız: " + error.message); // Hata mesajı göster
       }
     };
+
     const togglePasswordVisibility = () => {
       showPassword.value = !showPassword.value;
     };
