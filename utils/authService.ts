@@ -5,11 +5,11 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } f
 export const loginUser = async (email: string, password: string): Promise<void> => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log("Giriş başarılı:", userCredential.user);
-
-    // İsteğe bağlı: Kullanıcı token'ını saklayın (cookie veya localStorage)
     const token = await userCredential.user.getIdToken();
-    document.cookie = `authToken=${token}; path=/; secure; httpOnly`;
+
+    // Cookie ayarı (Tarayıcıda kontrol edebilirsiniz)
+    document.cookie = `authToken=${token}; path=/; max-age=3600; secure; SameSite=Strict`;
+    console.log("Giriş başarılı ve cookie yazıldı.");
   } catch (error: any) {
     console.error("Giriş başarısız:", error.message);
     throw new Error(error.message);
@@ -43,4 +43,15 @@ export const logoutUser = async (): Promise<void> => {
     console.error("Çıkış başarısız:", error.message);
     throw new Error(error.message);
   }
+};
+
+export const isUserLoggedIn = (): boolean => {
+  const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+    const [key, value] = cookie.split("=");
+    acc[key] = value;
+    return acc;
+  }, {} as Record<string, string>);
+
+  // authToken var mı kontrol et
+  return Boolean(cookies.authToken);
 };

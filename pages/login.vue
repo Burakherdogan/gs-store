@@ -190,15 +190,23 @@
     font-size: 0.9rem;
     color: #333;
   }
-  
-  input, select {
-    width: 100%;
+  .register-form {
+    max-width: 600px; /* Maksimum genişliği belirtiyoruz */
+    margin: 0 auto; /* Ortalamak için */
+    padding: 1rem; /* İçerik boşluğu */
+    background-color: #fff; /* Arka plan rengi */
+    border-radius: 8px; /* Köşeleri yuvarla */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    }
+
+    input, select {
+    width: 100%; /* Elemanları konteyner içinde genişlet */
     padding: 0.5rem;
     margin-top: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 0.9rem;
-  }
+    }
   
   .phone-container {
     display: flex;
