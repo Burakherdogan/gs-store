@@ -71,6 +71,7 @@
     } else {
       userStore.fetchUserData(); // Kullanıcı giriş yapmışsa verileri al
     }
+    
   });
   
   // Kullanıcı bilgilerini kaydet
