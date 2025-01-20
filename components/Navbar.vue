@@ -78,7 +78,9 @@
 
           <!-- Cart Icon -->
           <div class="cart ms-3">
-            <i class="bi bi-cart"></i>
+            <i class="bi bi-cart" @click="toggleCart"></i>
+             <!-- Cart Button and CartView -->
+            <CartView v-if="showCart" /> <!-- CartView component displayed when showCart is true -->
           </div>
         </div>
       </div>
@@ -87,13 +89,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { isUserLoggedIn, logoutUser } from "@/utils/authService";
+import CartView from '@/components/CartView.vue';  // CartView bileşenini import ettik
 
 const isScrolled = ref(false);
 const isLoggedIn = ref(false);
+const showCart = ref(false); // Cart görünürlüğünü kontrol etmek için ref
 
-
+// Sepet görünümünü açıp kapatmak için fonksiyon
+const toggleCart = () => {
+  showCart.value = !showCart.value;
+};
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;

@@ -14,6 +14,7 @@ export const useUserStore = defineStore("userStore", {
     },
     loading: false,
   }),
+
   actions: {
     async fetchUserData() {
       this.loading = true;
@@ -61,5 +62,16 @@ export const useUserStore = defineStore("userStore", {
         console.error("Kullanıcı verileri güncellenemedi:", error);
       }
     },
+  },
+
+  // Pinia'da persist state özelliğini ekliyoruz
+  persist: {
+    enabled: true, // Store'un kalıcı olmasını sağlıyoruz
+    strategies: [
+      {
+        key: "userData", // localStorage veya sessionStorage'da saklamak için bir anahtar
+        storage: process.client ? localStorage : undefined, // Sadece istemci tarafında kullan
+      },
+    ],
   },
 });
