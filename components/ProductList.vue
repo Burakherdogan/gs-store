@@ -67,38 +67,34 @@
   const selectedProduct = ref<Product | null>(null); // Tip olarak 'null' ekledik
   const selectedSize = ref<string | null>(null);
   
-  const products: Product[] = [
-    {
-      name: 'Galatasaray T-Shirt',
-      price: 100,
-      image: '@/assets/1.webp',
-      sizes: ['S', 'M', 'L', 'XL'],
-    },
-    {
-      name: 'Galatasaray Sweatshirt',
-      price: 200,
-      image: '@/assets/1.webp',
-      sizes: ['M', 'L', 'XL'],
-    },
-    {
-      name: 'Galatasaray Sweatshirt',
-      price: 270,
-      image: '@/assets/1.webp',
-      sizes: ['M', 'L', 'XL'],
-    },
-    {
-      name: 'Galatasaray Sweatshirt',
-      price: 232,
-      image: '@/assets/1.webp',
-      sizes: ['M', 'L', 'XL'],
-    },
-    {
-      name: 'Galatasaray Sweatshirt',
-      price: 1203,
-      image: '@/assets/1.webp',
-      sizes: ['M', 'L', 'XL'],
-    },
-  ];
+const products: Product[] = [
+        {
+          name: "Galatasaray T-Shirt",
+          price: 100,
+          image: "/1.webp",
+          sizes: ["S", "M", "L", "XL"],
+        },
+        {
+          name: "Galatasaray T-Shirt",
+          price: 350,
+          image: "/1.webp",
+          sizes: ["S", "M", "L", "XL"],
+        },
+        {
+          name: "Galatasaray T-Shirt",
+          price: 400,
+          image: "/1.webp",
+          sizes: ["S", "M", "L", "XL"],
+        },
+        {
+          name: "Galatasaray T-Shirt",
+          price: 7600,
+          image: "/1.webp",
+          sizes: ["S", "M", "L", "XL"],
+        },
+];
+
+
   
   // Popup açma
   const openPopup = (product: Product) => {
