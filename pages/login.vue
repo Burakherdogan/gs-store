@@ -145,7 +145,7 @@
         await registerUser(registerEmail.value, registerPassword.value, userData);
 
         console.log("Kayıt başarılı");
-        router.push("/login"); // Kayıt başarılıysa login sayfasına yönlendir
+        router.push("/");  // Kayıt başarılıysa login sayfasına yönlendir
       } catch (error: any) {
         console.error("Hata:", error.message);
         alert("Kayıt başarısız: " + error.message); // Hata mesajı göster
